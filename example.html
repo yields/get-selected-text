@@ -1,0 +1,10 @@
+<p style='font: 200 14px "Helvetica Neue"; padding: 20px'>select <em>this</em> text</p>
+
+<script src='build/build.js'></script>
+<script>
+  var selected = require('get-selected-text');
+
+  onmouseup = function(){
+    console.log(selected());
+  };
+</script>
