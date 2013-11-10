@@ -3,19 +3,17 @@
  * Selection
  */
 
-var selection = window.getSelection();
+var selection = window.getSelection
+  ? window.getSelection()
+  : document.selection;
 
 /**
  * Get user selected text.
  *
- * @return {Boolean}
+ * @return {String}
  * @api public
  */
 
 module.exports = function(){
-  if ('Range' != selection.type) return '';
-  return selection
-    .getRangeAt(0)
-    .cloneContents()
-    .textContent;
+  return selection.toString();
 };
